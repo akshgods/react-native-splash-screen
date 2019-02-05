@@ -1,4 +1,17 @@
 # react-native-splash-screen
+for this issue: 
+Android build error. MainActivity.java:7: error: cannot find symbol - onCreate(Bundle savedInstanceState) #
+
+please check issue https://github.com/crazycodeboy/react-native-splash-screen/issues/111
+
+@jnranawedo in my case, I wasn't including `Bundle` in `android/app/src/main/java/com/<myapp>/MainActivity.java`.
+
+I solved the issue by adding these lines to the top of `MainActivity.java`:
+
+```
+import android.os.Bundle; // required for onCreate parameter
+import org.devio.rn.splashscreen.SplashScreen; // required for react-native-splash-screen >= 0.3.1
+```
 
 
 [![Download](https://img.shields.io/badge/Download-v3.1.1-ff69b4.svg) ](https://www.npmjs.com/package/react-native-splash-screen)
